@@ -108,7 +108,6 @@ object Decoder {
       case p: Mirror.ProductOf[A] =>
         decoderProduct(p)
       case s: Mirror.SumOf[A] =>
-        val elemDecoders = summonDecoders[s.MirroredElemTypes]
         decoderSum(s)
     }
 
